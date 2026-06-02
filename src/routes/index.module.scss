@@ -5,9 +5,21 @@
 .header {
   padding: 72px 0 48px;
 
+  .branding {
+    @media (max-width: 30em) {
+      flex-direction: column;
+    }
+  }
+
   .logo {
     height: 100px;
     width: 100px;
+  }
+
+  .heading {
+    @media (max-width: 30em) {
+      text-align: center;
+    }
   }
 }
 

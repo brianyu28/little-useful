@@ -51,13 +51,13 @@ function App() {
   return (
     <Container component="main" className={styles.home} size="lg">
       <header className={styles.header}>
-        <Group justify="center">
+        <Group className={styles.branding} justify="center">
           <img
             className={styles.logo}
             alt="Little Useful Logo"
             src="/logo.png"
           />
-          <div>
+          <div className={styles.heading}>
             <Title order={1}>Little Useful</Title>
             <Text c="dimmed" mt="xs">
               A free collection of little useful tools
