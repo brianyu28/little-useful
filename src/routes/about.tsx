@@ -1,4 +1,4 @@
-import { Button, Container, Stack, Text, Title } from "@mantine/core";
+import { Button, Container, Group, Stack, Text, Title } from "@mantine/core";
 import { Link, createFileRoute } from "@tanstack/react-router";
 import styles from "./about.module.scss";
 
@@ -17,9 +17,18 @@ function About() {
           Little Useful is maintained by{" "}
           <a href="https://brianyu.me">Brian Yu</a>.
         </Text>
-        <Button component={Link} to="/" w="fit-content">
-          Find a tool
-        </Button>
+        <Group>
+          <Button component={Link} to="/" w="fit-content">
+            Find a tool
+          </Button>
+          <Button
+            component="a"
+            href="https://github.com/brianyu28/little-useful"
+            variant="default"
+          >
+            Contribute
+          </Button>
+        </Group>
       </Stack>
     </Container>
   );

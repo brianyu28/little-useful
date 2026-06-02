@@ -10,9 +10,14 @@ export default function Footer() {
           <Text c="dimmed" size="sm">
             &copy; {new Date().getFullYear()} Little Useful
           </Text>
-          <Anchor component={Link} size="sm" to="/about">
-            About
-          </Anchor>
+          <Group gap="md">
+            <Anchor component={Link} size="sm" to="/about">
+              About
+            </Anchor>
+            <Anchor href="https://github.com/brianyu28/little-useful" size="sm">
+              GitHub
+            </Anchor>
+          </Group>
         </Group>
       </Container>
     </footer>
