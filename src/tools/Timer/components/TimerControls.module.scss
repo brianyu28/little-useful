@@ -1,0 +1,111 @@
+.timerControls {
+  align-items: center;
+  display: grid;
+  gap: clamp(8px, 3vw, 16px);
+  grid-template-columns: 40px minmax(0, 360px) 40px;
+  width: min(100%, 472px);
+}
+
+.circle {
+  aspect-ratio: 1;
+  display: grid;
+  justify-items: center;
+  position: relative;
+  width: 100%;
+}
+
+.ring {
+  height: 100%;
+  overflow: visible;
+  position: absolute;
+  transform: rotate(-90deg);
+  width: 100%;
+}
+
+.track,
+.progress {
+  fill: none;
+  stroke-width: 8;
+}
+
+.track {
+  stroke: var(--app-border);
+}
+
+.progress {
+  stroke: var(--app-accent);
+  stroke-linecap: round;
+  transition: stroke-dashoffset 100ms ease-out;
+}
+
+.time {
+  inset: 0;
+  position: absolute;
+}
+
+.minutes,
+.seconds {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  left: 0;
+  position: absolute;
+  right: 0;
+}
+
+.minutes {
+  height: 100px;
+  top: 120px;
+}
+
+.seconds {
+  height: 48px;
+  top: 220px;
+}
+
+.minutesValue,
+.minutesInput {
+  font-size: clamp(4rem, 18vw, 7rem);
+  font-variant-numeric: tabular-nums;
+  font-weight: 700;
+  letter-spacing: -0.025em;
+  line-height: 1;
+}
+
+.compactMinutes {
+  font-size: clamp(3rem, 13vw, 5rem);
+}
+
+.secondsValue,
+.secondsInput {
+  color: var(--app-muted);
+  font-size: 2rem;
+  font-variant-numeric: tabular-nums;
+  font-weight: 700;
+  letter-spacing: -0.025em;
+  line-height: 1;
+}
+
+.editableValue {
+  cursor: text;
+}
+
+.minutesInput,
+.secondsInput {
+  background: transparent;
+  border: 0;
+  font-family: inherit;
+  outline: 0;
+  padding: 0;
+  text-align: center;
+}
+
+.minutesInput {
+  color: var(--app-text);
+  width: 230px;
+}
+
+.secondsInput {
+  color: var(--app-muted);
+  width: 72px;
+}

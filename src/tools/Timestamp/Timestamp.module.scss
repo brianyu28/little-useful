@@ -1,0 +1,24 @@
+.timestamp {
+  input {
+    font-family:
+      ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
+      "Courier New", monospace;
+    font-size: 1.5rem;
+    font-weight: 700;
+    text-align: center;
+  }
+
+  :global(.mantine-InputWrapper-error) {
+    text-align: center;
+  }
+}
+
+.timestampMeta {
+  margin-top: -12px;
+  text-align: center;
+}
+
+.unit {
+  font-size: 1.25rem;
+  font-weight: 700;
+}

@@ -1,0 +1,18 @@
+.card {
+  background: var(--app-surface);
+  color: var(--app-text);
+  text-decoration: none;
+  transition:
+    transform 150ms ease,
+    box-shadow 150ms ease;
+}
+
+.card:hover {
+  box-shadow: var(--mantine-shadow-md);
+  transform: translateY(-3px);
+}
+
+.card:focus-visible,
+.highlighted {
+  border-color: var(--app-accent);
+}

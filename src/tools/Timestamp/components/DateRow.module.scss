@@ -1,0 +1,55 @@
+.dateRow {
+  align-items: center;
+  border-top: 1px solid var(--app-border);
+  padding-top: 16px;
+}
+
+.fields {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+  justify-content: center;
+}
+
+.fieldGroup {
+  align-items: center;
+  display: flex;
+  gap: 4px;
+}
+
+.fieldGroup > div {
+  width: 48px;
+
+  input {
+    font-size: 1rem;
+  }
+}
+
+.fieldGroup > .year {
+  width: 72px;
+}
+
+.meridiem {
+  width: 76px;
+}
+
+.formattedDate {
+  font-size: 1rem;
+  text-align: center;
+}
+
+.timeZone {
+  font-size: 1rem;
+}
+
+.dateRow > div:first-child > p:first-child {
+  font-size: 1.15rem;
+}
+
+@media (max-width: 440px) {
+  .fields {
+    align-items: center;
+    flex-direction: column;
+  }
+}

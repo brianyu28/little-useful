@@ -1,0 +1,31 @@
+.colorControls {
+  display: grid;
+  gap: 16px;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+}
+
+.preview {
+  border-radius: 4px;
+  min-height: 244px;
+}
+
+.picker {
+  :global(.mantine-ColorPicker-saturation) {
+    border-radius: 12px;
+    height: 220px;
+  }
+}
+
+.hexInput {
+  flex: 1;
+}
+
+@media (max-width: 560px) {
+  .colorControls {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .preview {
+    min-height: 160px;
+  }
+}

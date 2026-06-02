@@ -1,0 +1,12 @@
+.channel {
+  align-items: flex-end;
+
+  & > div:first-child {
+    flex: 0 0 96px;
+  }
+
+  & > div:last-child {
+    flex: 1;
+    margin-bottom: 14px;
+  }
+}

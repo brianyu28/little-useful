@@ -1,0 +1,15 @@
+.paper:focus-within {
+  border-color: var(--app-accent);
+}
+
+.input {
+  background: transparent;
+  border: 0;
+  min-height: min(60vh, 560px);
+  padding: 4px;
+  resize: vertical;
+}
+
+.input:focus {
+  outline: 0;
+}

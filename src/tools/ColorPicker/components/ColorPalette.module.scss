@@ -1,0 +1,18 @@
+.palette {
+  border-top: 1px solid var(--app-border);
+  padding-top: 16px;
+}
+
+.swatch {
+  border: 2px solid var(--app-border);
+  border-radius: 10px;
+  cursor: pointer;
+  height: 44px;
+  padding: 0;
+  width: 44px;
+
+  &:focus-visible {
+    outline: 3px solid var(--app-accent);
+    outline-offset: 2px;
+  }
+}

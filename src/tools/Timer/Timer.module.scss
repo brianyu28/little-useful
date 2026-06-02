@@ -1,0 +1,17 @@
+.timer {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  padding: 16px 0;
+}
+
+.endMessage {
+  color: var(--app-muted);
+  text-align: center;
+}
+
+.finished {
+  max-width: 360px;
+  width: 100%;
+}
