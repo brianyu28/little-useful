@@ -1,5 +1,5 @@
 import { List, Stack, Text } from "@mantine/core";
-import styles from "../ProcessJSON.module.scss";
+import styles from "../ProcessJson.module.scss";
 
 export default function ProcessJSONInstructions() {
   return (
