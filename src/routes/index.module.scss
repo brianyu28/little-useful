@@ -2,6 +2,12 @@
   padding-bottom: 64px;
 }
 
+.searchActive {
+  @media (max-width: 48em) {
+    padding-bottom: max(64px, 90svh);
+  }
+}
+
 .header {
   padding: 72px 0 48px;
 

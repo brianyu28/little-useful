@@ -7,6 +7,7 @@ import {
   Title,
 } from "@mantine/core";
 import { createFileRoute, useNavigate } from "@tanstack/react-router";
+import classNames from "classnames";
 import { Search } from "lucide-react";
 import React from "react";
 import ToolCard from "../components/ToolCard";
@@ -100,7 +101,13 @@ function App() {
   }, []);
 
   return (
-    <Container component="main" className={styles.home} size="lg">
+    <Container
+      component="main"
+      className={classNames(styles.home, {
+        [styles.searchActive]: searchFocused,
+      })}
+      size="lg"
+    >
       <header className={styles.header}>
         <Group className={styles.branding} justify="center">
           <img
