@@ -359,7 +359,6 @@ export default function RegexTest() {
         <div className={styles.controls}>
           <TextInput
             aria-label="Regular expression"
-            autoFocus
             label="Regular expression"
             onChange={handlePatternChange}
             placeholder="Pattern..."

@@ -234,7 +234,6 @@ export default function QRCodeTool() {
       case QRCodeType.URL:
         return (
           <TextInput
-            autoFocus
             label="URL"
             onChange={(event) => updateValue("url", event.currentTarget.value)}
             placeholder="https://example.com"

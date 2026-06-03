@@ -16,11 +16,24 @@ import styles from "./index.module.scss";
 
 export const Route = createFileRoute("/")({ component: App });
 
+const mobileSearchMediaQuery = "(max-width: 48em)";
+const mobileSearchScrollOffset = 12;
+
 function App() {
   const [query, setQuery] = React.useState("");
   const [searchFocused, setSearchFocused] = React.useState(false);
   const [focusedToolPath, setFocusedToolPath] = React.useState<string>();
+  const searchInputRef = React.useRef<HTMLInputElement>(null);
+  const shouldScrollSearchOnFocusRef = React.useRef(false);
   const navigate = useNavigate();
+
+  React.useEffect(() => {
+    if (window.matchMedia(mobileSearchMediaQuery).matches) {
+      return;
+    }
+
+    searchInputRef.current?.focus();
+  }, []);
 
   const filteredTools = React.useMemo(
     () => (query.trim() ? searchTools(query) : tools),
@@ -36,7 +49,10 @@ function App() {
     [filteredTools, navigate, query],
   );
 
-  const handleSearchBlur = React.useCallback(() => setSearchFocused(false), []);
+  const handleSearchBlur = React.useCallback(() => {
+    shouldScrollSearchOnFocusRef.current = false;
+    setSearchFocused(false);
+  }, []);
 
   const handleSearchChange = React.useCallback(
     (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -46,7 +62,42 @@ function App() {
     [],
   );
 
-  const handleSearchFocus = React.useCallback(() => setSearchFocused(true), []);
+  const handleSearchFocus = React.useCallback(
+    (event: React.FocusEvent<HTMLInputElement>) => {
+      const input = event.currentTarget;
+
+      setSearchFocused(true);
+
+      if (!window.matchMedia(mobileSearchMediaQuery).matches) {
+        return;
+      }
+
+      if (!shouldScrollSearchOnFocusRef.current) {
+        return;
+      }
+
+      shouldScrollSearchOnFocusRef.current = false;
+
+      window.requestAnimationFrame(() => {
+        window.scrollTo({
+          behavior: "smooth",
+          top: Math.max(
+            input.getBoundingClientRect().top +
+              window.scrollY -
+              mobileSearchScrollOffset,
+            0,
+          ),
+        });
+      });
+    },
+    [],
+  );
+
+  const handleSearchPointerDown = React.useCallback(() => {
+    shouldScrollSearchOnFocusRef.current = window.matchMedia(
+      mobileSearchMediaQuery,
+    ).matches;
+  }, []);
 
   return (
     <Container component="main" className={styles.home} size="lg">
@@ -66,14 +117,16 @@ function App() {
         </Group>
         <TextInput
           aria-label="Search tools"
-          autoFocus
           className={styles.search}
+          classNames={{ input: styles.searchInput }}
           leftSection={<Search size={20} />}
           onBlur={handleSearchBlur}
           onChange={handleSearchChange}
           onFocus={handleSearchFocus}
           onKeyDown={handleSearchKeyDown}
+          onPointerDown={handleSearchPointerDown}
           placeholder="Search tools..."
+          ref={searchInputRef}
           radius="xl"
           size="lg"
           value={query}

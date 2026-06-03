@@ -1,5 +1,5 @@
 .page {
-  padding: 28px 0 64px;
+  padding: 28px clamp(16px, 5vw, 32px) 64px;
 }
 
 .logo {
