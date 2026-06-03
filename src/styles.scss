@@ -30,3 +30,13 @@ body {
     sans-serif;
   margin: 0;
 }
+
+/** Prevent Safari from zooming in on inputs when they are focused */
+@media (hover: none) and (pointer: coarse) {
+  input:not([type="checkbox"]):not([type="radio"]):not([type="range"]),
+  select,
+  textarea,
+  .mantine-Input-input {
+    font-size: 16px;
+  }
+}
