@@ -2,6 +2,7 @@ import type { ToolConfig } from "../types/ToolConfig";
 import { ColorPickerConfig } from "./ColorPicker/ColorPickerConfig";
 import { ContrastCheckConfig } from "./ContrastCheck/ContrastCheckConfig";
 import { EventCountdownConfig } from "./EventCountdown/EventCountdownConfig";
+import { ProcessJSONConfig } from "./ProcessJson/ProcessJsonConfig";
 import { QRCodeConfig } from "./QRCode/QRCodeConfig";
 import { RegexTestConfig } from "./RegexTest/RegexTestConfig";
 import { ScratchpadConfig } from "./Scratchpad/ScratchpadConfig";
@@ -15,6 +16,7 @@ export const tools: ToolConfig[] = [
   QRCodeConfig,
   ScratchpadConfig,
   TimestampConfig,
+  ProcessJSONConfig,
   ContrastCheckConfig,
   RegexTestConfig,
 ];

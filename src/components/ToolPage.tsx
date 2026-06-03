@@ -1,4 +1,4 @@
-import type { MantineSpacing, StyleProp } from "@mantine/core";
+import type { MantineSize, MantineSpacing, StyleProp } from "@mantine/core";
 import {
   ActionIcon,
   Container,
@@ -22,6 +22,7 @@ interface Props {
   readonly description: string;
   readonly instructions?: ReactNode;
   readonly settings?: ReactNode;
+  readonly size?: MantineSize;
   readonly title: string;
 }
 
@@ -32,6 +33,7 @@ export default function ToolPage({
   description,
   instructions,
   settings,
+  size = "sm",
   title,
 }: Props) {
   const [areSettingsOpen, { close: closeSettings, open: openSettings }] =
@@ -42,7 +44,7 @@ export default function ToolPage({
   ] = useDisclosure(false);
 
   return (
-    <Container component="main" className={styles.page} size="sm">
+    <Container component="main" className={styles.page} size={size}>
       <Group className={styles.nav} justify="space-between">
         <ActionIcon
           aria-label="All tools"

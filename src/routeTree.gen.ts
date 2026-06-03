@@ -14,6 +14,7 @@ import { Route as TimerRouteImport } from './routes/timer'
 import { Route as ScratchpadRouteImport } from './routes/scratchpad'
 import { Route as RegexRouteImport } from './routes/regex'
 import { Route as QrRouteImport } from './routes/qr'
+import { Route as JqRouteImport } from './routes/jq'
 import { Route as EventsRouteImport } from './routes/events'
 import { Route as ContrastRouteImport } from './routes/contrast'
 import { Route as ColorRouteImport } from './routes/color'
@@ -43,6 +44,11 @@ const RegexRoute = RegexRouteImport.update({
 const QrRoute = QrRouteImport.update({
   id: '/qr',
   path: '/qr',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const JqRoute = JqRouteImport.update({
+  id: '/jq',
+  path: '/jq',
   getParentRoute: () => rootRouteImport,
 } as any)
 const EventsRoute = EventsRouteImport.update({
@@ -77,6 +83,7 @@ export interface FileRoutesByFullPath {
   '/color': typeof ColorRoute
   '/contrast': typeof ContrastRoute
   '/events': typeof EventsRoute
+  '/jq': typeof JqRoute
   '/qr': typeof QrRoute
   '/regex': typeof RegexRoute
   '/scratchpad': typeof ScratchpadRoute
@@ -89,6 +96,7 @@ export interface FileRoutesByTo {
   '/color': typeof ColorRoute
   '/contrast': typeof ContrastRoute
   '/events': typeof EventsRoute
+  '/jq': typeof JqRoute
   '/qr': typeof QrRoute
   '/regex': typeof RegexRoute
   '/scratchpad': typeof ScratchpadRoute
@@ -102,6 +110,7 @@ export interface FileRoutesById {
   '/color': typeof ColorRoute
   '/contrast': typeof ContrastRoute
   '/events': typeof EventsRoute
+  '/jq': typeof JqRoute
   '/qr': typeof QrRoute
   '/regex': typeof RegexRoute
   '/scratchpad': typeof ScratchpadRoute
@@ -116,6 +125,7 @@ export interface FileRouteTypes {
     | '/color'
     | '/contrast'
     | '/events'
+    | '/jq'
     | '/qr'
     | '/regex'
     | '/scratchpad'
@@ -128,6 +138,7 @@ export interface FileRouteTypes {
     | '/color'
     | '/contrast'
     | '/events'
+    | '/jq'
     | '/qr'
     | '/regex'
     | '/scratchpad'
@@ -140,6 +151,7 @@ export interface FileRouteTypes {
     | '/color'
     | '/contrast'
     | '/events'
+    | '/jq'
     | '/qr'
     | '/regex'
     | '/scratchpad'
@@ -153,6 +165,7 @@ export interface RootRouteChildren {
   ColorRoute: typeof ColorRoute
   ContrastRoute: typeof ContrastRoute
   EventsRoute: typeof EventsRoute
+  JqRoute: typeof JqRoute
   QrRoute: typeof QrRoute
   RegexRoute: typeof RegexRoute
   ScratchpadRoute: typeof ScratchpadRoute
@@ -195,6 +208,13 @@ declare module '@tanstack/react-router' {
       path: '/qr'
       fullPath: '/qr'
       preLoaderRoute: typeof QrRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/jq': {
+      id: '/jq'
+      path: '/jq'
+      fullPath: '/jq'
+      preLoaderRoute: typeof JqRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/events': {
@@ -241,6 +261,7 @@ const rootRouteChildren: RootRouteChildren = {
   ColorRoute: ColorRoute,
   ContrastRoute: ContrastRoute,
   EventsRoute: EventsRoute,
+  JqRoute: JqRoute,
   QrRoute: QrRoute,
   RegexRoute: RegexRoute,
   ScratchpadRoute: ScratchpadRoute,

@@ -113,7 +113,7 @@ function pluralize(value: number, unit: string) {
 
 export default function EventCountdown() {
   const [{ events }, setCountdown] = useToolState(
-    "event-countdown",
+    "events",
     eventCountdownDefaults,
     eventCountdownSchema,
   );

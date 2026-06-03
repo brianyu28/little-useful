@@ -1,0 +1,132 @@
+.surface {
+  height: min(74svh, 760px);
+  min-height: 520px;
+  overflow: auto;
+  resize: vertical;
+  width: 100%;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  height: 100%;
+  min-height: 0;
+  width: 100%;
+}
+
+.query {
+  width: 100%;
+}
+
+.queryInput {
+  font-family:
+    ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
+    monospace;
+  font-size: 16px;
+}
+
+.statusIcon {
+  color: var(--app-muted);
+}
+
+.statusDone {
+  color: #2f7d32;
+}
+
+.editorGrid {
+  display: grid;
+  flex: 1 1 auto;
+  gap: 16px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  height: 100%;
+  min-height: 0;
+  width: 100%;
+}
+
+.editorPanel {
+  border: 1px solid var(--app-border);
+  border-radius: 6px;
+  display: grid;
+  grid-template-rows: auto minmax(0, 1fr);
+  min-width: 0;
+  overflow: hidden;
+  width: 100%;
+}
+
+.editorHeader {
+  align-items: center;
+  background: color-mix(in srgb, var(--app-bg) 72%, var(--app-surface));
+  border-bottom: 1px solid var(--app-border);
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  min-height: 44px;
+  padding: 6px 8px 6px 14px;
+}
+
+.editorTitle {
+  min-width: 0;
+}
+
+.editorActions {
+  flex: 0 0 auto;
+}
+
+.editorHost {
+  height: 100%;
+  min-height: 0;
+  min-width: 0;
+  width: 100%;
+}
+
+.editorHost :global(.cm-editor) {
+  height: 100%;
+  min-width: 0;
+  width: 100%;
+}
+
+.editorHost :global(.cm-scroller) {
+  height: 100%;
+  min-width: 0;
+}
+
+.editorHost :global(.cm-content) {
+  min-width: 0;
+}
+
+.error {
+  white-space: pre-wrap;
+  margin-bottom: 12px;
+}
+
+.inlineCode {
+  background: color-mix(in srgb, var(--app-bg) 70%, var(--app-surface));
+  border: 1px solid var(--app-border);
+  border-radius: 4px;
+  font-family:
+    ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
+    monospace;
+  font-size: 0.9em;
+  padding: 1px 4px;
+}
+
+.outputSettings {
+  display: grid;
+  gap: 12px;
+  padding: 12px;
+}
+
+@media (max-width: 760px) {
+  .surface {
+    height: auto;
+  }
+
+  .form {
+    min-height: 980px;
+  }
+
+  .editorGrid {
+    grid-template-columns: 1fr;
+  }
+}
