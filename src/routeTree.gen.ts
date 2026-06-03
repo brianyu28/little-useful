@@ -12,6 +12,10 @@ import { Route as rootRouteImport } from './routes/__root'
 import { Route as TimestampRouteImport } from './routes/timestamp'
 import { Route as TimerRouteImport } from './routes/timer'
 import { Route as ScratchpadRouteImport } from './routes/scratchpad'
+import { Route as RegexRouteImport } from './routes/regex'
+import { Route as QrRouteImport } from './routes/qr'
+import { Route as EventsRouteImport } from './routes/events'
+import { Route as ContrastRouteImport } from './routes/contrast'
 import { Route as ColorRouteImport } from './routes/color'
 import { Route as AboutRouteImport } from './routes/about'
 import { Route as IndexRouteImport } from './routes/index'
@@ -29,6 +33,26 @@ const TimerRoute = TimerRouteImport.update({
 const ScratchpadRoute = ScratchpadRouteImport.update({
   id: '/scratchpad',
   path: '/scratchpad',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const RegexRoute = RegexRouteImport.update({
+  id: '/regex',
+  path: '/regex',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const QrRoute = QrRouteImport.update({
+  id: '/qr',
+  path: '/qr',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const EventsRoute = EventsRouteImport.update({
+  id: '/events',
+  path: '/events',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ContrastRoute = ContrastRouteImport.update({
+  id: '/contrast',
+  path: '/contrast',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ColorRoute = ColorRouteImport.update({
@@ -51,6 +75,10 @@ export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/color': typeof ColorRoute
+  '/contrast': typeof ContrastRoute
+  '/events': typeof EventsRoute
+  '/qr': typeof QrRoute
+  '/regex': typeof RegexRoute
   '/scratchpad': typeof ScratchpadRoute
   '/timer': typeof TimerRoute
   '/timestamp': typeof TimestampRoute
@@ -59,6 +87,10 @@ export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/color': typeof ColorRoute
+  '/contrast': typeof ContrastRoute
+  '/events': typeof EventsRoute
+  '/qr': typeof QrRoute
+  '/regex': typeof RegexRoute
   '/scratchpad': typeof ScratchpadRoute
   '/timer': typeof TimerRoute
   '/timestamp': typeof TimestampRoute
@@ -68,20 +100,48 @@ export interface FileRoutesById {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/color': typeof ColorRoute
+  '/contrast': typeof ContrastRoute
+  '/events': typeof EventsRoute
+  '/qr': typeof QrRoute
+  '/regex': typeof RegexRoute
   '/scratchpad': typeof ScratchpadRoute
   '/timer': typeof TimerRoute
   '/timestamp': typeof TimestampRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/about' | '/color' | '/scratchpad' | '/timer' | '/timestamp'
+  fullPaths:
+    | '/'
+    | '/about'
+    | '/color'
+    | '/contrast'
+    | '/events'
+    | '/qr'
+    | '/regex'
+    | '/scratchpad'
+    | '/timer'
+    | '/timestamp'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/about' | '/color' | '/scratchpad' | '/timer' | '/timestamp'
+  to:
+    | '/'
+    | '/about'
+    | '/color'
+    | '/contrast'
+    | '/events'
+    | '/qr'
+    | '/regex'
+    | '/scratchpad'
+    | '/timer'
+    | '/timestamp'
   id:
     | '__root__'
     | '/'
     | '/about'
     | '/color'
+    | '/contrast'
+    | '/events'
+    | '/qr'
+    | '/regex'
     | '/scratchpad'
     | '/timer'
     | '/timestamp'
@@ -91,6 +151,10 @@ export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AboutRoute: typeof AboutRoute
   ColorRoute: typeof ColorRoute
+  ContrastRoute: typeof ContrastRoute
+  EventsRoute: typeof EventsRoute
+  QrRoute: typeof QrRoute
+  RegexRoute: typeof RegexRoute
   ScratchpadRoute: typeof ScratchpadRoute
   TimerRoute: typeof TimerRoute
   TimestampRoute: typeof TimestampRoute
@@ -117,6 +181,34 @@ declare module '@tanstack/react-router' {
       path: '/scratchpad'
       fullPath: '/scratchpad'
       preLoaderRoute: typeof ScratchpadRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/regex': {
+      id: '/regex'
+      path: '/regex'
+      fullPath: '/regex'
+      preLoaderRoute: typeof RegexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/qr': {
+      id: '/qr'
+      path: '/qr'
+      fullPath: '/qr'
+      preLoaderRoute: typeof QrRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/events': {
+      id: '/events'
+      path: '/events'
+      fullPath: '/events'
+      preLoaderRoute: typeof EventsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/contrast': {
+      id: '/contrast'
+      path: '/contrast'
+      fullPath: '/contrast'
+      preLoaderRoute: typeof ContrastRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/color': {
@@ -147,6 +239,10 @@ const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AboutRoute: AboutRoute,
   ColorRoute: ColorRoute,
+  ContrastRoute: ContrastRoute,
+  EventsRoute: EventsRoute,
+  QrRoute: QrRoute,
+  RegexRoute: RegexRoute,
   ScratchpadRoute: ScratchpadRoute,
   TimerRoute: TimerRoute,
   TimestampRoute: TimestampRoute,

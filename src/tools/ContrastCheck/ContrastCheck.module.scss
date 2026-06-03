@@ -1,0 +1,105 @@
+.preview {
+  align-items: center;
+  border: 1px solid var(--app-border);
+  border-radius: 6px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  justify-content: center;
+  min-height: 172px;
+  padding: 24px;
+  text-align: center;
+}
+
+.previewText {
+  font-size: 40px;
+  font-weight: 800;
+  line-height: 1.1;
+  overflow-wrap: anywhere;
+}
+
+.previewTextSmall {
+  font-size: 16pt;
+  line-height: 1.2;
+}
+
+.ratioPanel {
+  border: 1px solid var(--app-border);
+  border-radius: 6px;
+  padding: 16px;
+}
+
+.ratioValue {
+  font-size: 36px;
+  font-weight: 800;
+  line-height: 1;
+}
+
+.resultRow {
+  align-items: center;
+  border-top: 1px solid var(--app-border);
+  display: flex;
+  gap: 16px;
+  justify-content: space-between;
+  padding: 12px 0;
+}
+
+.resultRow:first-child {
+  border-top: 0;
+  padding-top: 0;
+}
+
+.resultRow:last-child {
+  padding-bottom: 0;
+}
+
+.resultLabel {
+  min-width: 0;
+}
+
+.statusPill {
+  border-radius: 4px;
+  flex: 0 0 auto;
+  font-size: 16px;
+  font-weight: 800;
+  letter-spacing: 0;
+  line-height: 1;
+  min-width: 120px;
+  padding: 10px 14px;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.statusPass {
+  background: #2d5e31;
+  color: #ffffff;
+}
+
+.statusFail {
+  background: #b3261e;
+  color: #ffffff;
+}
+
+@media (max-width: 560px) {
+  .preview {
+    min-height: 132px;
+    padding: 18px;
+  }
+
+  .previewText {
+    font-size: 32px;
+  }
+
+  .ratioValue {
+    font-size: 32px;
+  }
+
+  .resultRow {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .statusPill {
+    width: 100%;
+  }
+}

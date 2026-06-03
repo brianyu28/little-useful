@@ -4,12 +4,12 @@ export default function TimerInstructions() {
   return (
     <>
       <Text mb="sm">
-        Set a timer with the circle controls or type a duration directly.
+        Set a timer by pressing the + and - buttons or by typing a number of
+        minutes.
       </Text>
       <List spacing="xs">
         <List.Item>
-          Type minutes. Press <strong>:</strong> to switch to seconds for a more
-          precise timer.
+          Type <strong>:</strong> to specify a number of seconds.
         </List.Item>
         <List.Item>
           Press <strong>Enter</strong> to start.

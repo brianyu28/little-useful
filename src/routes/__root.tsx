@@ -1,4 +1,5 @@
 import "@mantine/core/styles.css";
+import "@mantine/dates/styles.css";
 import { createRootRoute } from "@tanstack/react-router";
 import NotFound from "../components/NotFound";
 import RootDocument from "../components/RootDocument";
