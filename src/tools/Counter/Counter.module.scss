@@ -1,0 +1,71 @@
+.controls {
+  align-items: end;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  justify-content: space-between;
+}
+
+.options {
+  min-width: 220px;
+}
+
+.optionsButton {
+  margin-top: 5px;
+  width: 100%;
+}
+
+.optionMenuItem {
+  min-width: 0;
+}
+
+.textarea {
+  font-family:
+    ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
+    monospace;
+  max-height: 420px;
+  overflow-y: auto;
+}
+
+.results {
+  border: 1px solid var(--app-border);
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.resultRow {
+  align-items: center;
+  border-top: 1px solid var(--app-border);
+  display: grid;
+  gap: 12px;
+  grid-template-columns: 84px minmax(0, 1fr);
+  min-height: 44px;
+  padding: 10px 12px;
+}
+
+.resultRow:first-child {
+  border-top: 0;
+}
+
+.count {
+  justify-self: start;
+}
+
+.line {
+  font-family:
+    ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
+    monospace;
+  overflow-wrap: anywhere;
+}
+
+.empty {
+  color: var(--app-muted);
+  margin: 0;
+  padding: 16px;
+}
+
+@media (max-width: 560px) {
+  .resultRow {
+    grid-template-columns: 64px minmax(0, 1fr);
+  }
+}

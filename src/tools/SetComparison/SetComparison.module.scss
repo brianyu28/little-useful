@@ -1,0 +1,77 @@
+.controls {
+  align-items: end;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  justify-content: space-between;
+}
+
+.options {
+  min-width: 220px;
+}
+
+.optionsButton {
+  margin-top: 5px;
+  width: 100%;
+}
+
+.optionMenuItem {
+  min-width: 0;
+}
+
+.inputs {
+  display: grid;
+  gap: 16px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.panel {
+  display: grid;
+  gap: 8px;
+  min-width: 0;
+}
+
+.textarea {
+  font-family:
+    ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
+    monospace;
+  height: clamp(240px, 38vh, 360px);
+  max-height: 360px;
+  overflow-y: auto;
+  resize: none;
+}
+
+.results {
+  display: grid;
+  gap: 12px;
+}
+
+.list {
+  display: grid;
+  gap: 6px;
+  margin: 0;
+  padding: 0;
+}
+
+.item {
+  background: color-mix(in srgb, var(--app-bg) 72%, var(--app-surface));
+  border: 1px solid var(--app-border);
+  border-radius: 6px;
+  font-family:
+    ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
+    monospace;
+  list-style: none;
+  overflow-wrap: anywhere;
+  padding: 8px 10px;
+}
+
+.empty {
+  color: var(--app-muted);
+  margin: 0;
+}
+
+@media (max-width: 760px) {
+  .inputs {
+    grid-template-columns: 1fr;
+  }
+}

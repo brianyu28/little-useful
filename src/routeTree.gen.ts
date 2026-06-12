@@ -11,11 +11,14 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as TimestampRouteImport } from './routes/timestamp'
 import { Route as TimerRouteImport } from './routes/timer'
+import { Route as SetsRouteImport } from './routes/sets'
 import { Route as ScratchpadRouteImport } from './routes/scratchpad'
 import { Route as RegexRouteImport } from './routes/regex'
+import { Route as RandomizerRouteImport } from './routes/randomizer'
 import { Route as QrRouteImport } from './routes/qr'
 import { Route as JqRouteImport } from './routes/jq'
 import { Route as EventsRouteImport } from './routes/events'
+import { Route as CounterRouteImport } from './routes/counter'
 import { Route as ContrastRouteImport } from './routes/contrast'
 import { Route as ColorRouteImport } from './routes/color'
 import { Route as AboutRouteImport } from './routes/about'
@@ -31,6 +34,11 @@ const TimerRoute = TimerRouteImport.update({
   path: '/timer',
   getParentRoute: () => rootRouteImport,
 } as any)
+const SetsRoute = SetsRouteImport.update({
+  id: '/sets',
+  path: '/sets',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ScratchpadRoute = ScratchpadRouteImport.update({
   id: '/scratchpad',
   path: '/scratchpad',
@@ -39,6 +47,11 @@ const ScratchpadRoute = ScratchpadRouteImport.update({
 const RegexRoute = RegexRouteImport.update({
   id: '/regex',
   path: '/regex',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const RandomizerRoute = RandomizerRouteImport.update({
+  id: '/randomizer',
+  path: '/randomizer',
   getParentRoute: () => rootRouteImport,
 } as any)
 const QrRoute = QrRouteImport.update({
@@ -54,6 +67,11 @@ const JqRoute = JqRouteImport.update({
 const EventsRoute = EventsRouteImport.update({
   id: '/events',
   path: '/events',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CounterRoute = CounterRouteImport.update({
+  id: '/counter',
+  path: '/counter',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ContrastRoute = ContrastRouteImport.update({
@@ -82,11 +100,14 @@ export interface FileRoutesByFullPath {
   '/about': typeof AboutRoute
   '/color': typeof ColorRoute
   '/contrast': typeof ContrastRoute
+  '/counter': typeof CounterRoute
   '/events': typeof EventsRoute
   '/jq': typeof JqRoute
   '/qr': typeof QrRoute
+  '/randomizer': typeof RandomizerRoute
   '/regex': typeof RegexRoute
   '/scratchpad': typeof ScratchpadRoute
+  '/sets': typeof SetsRoute
   '/timer': typeof TimerRoute
   '/timestamp': typeof TimestampRoute
 }
@@ -95,11 +116,14 @@ export interface FileRoutesByTo {
   '/about': typeof AboutRoute
   '/color': typeof ColorRoute
   '/contrast': typeof ContrastRoute
+  '/counter': typeof CounterRoute
   '/events': typeof EventsRoute
   '/jq': typeof JqRoute
   '/qr': typeof QrRoute
+  '/randomizer': typeof RandomizerRoute
   '/regex': typeof RegexRoute
   '/scratchpad': typeof ScratchpadRoute
+  '/sets': typeof SetsRoute
   '/timer': typeof TimerRoute
   '/timestamp': typeof TimestampRoute
 }
@@ -109,11 +133,14 @@ export interface FileRoutesById {
   '/about': typeof AboutRoute
   '/color': typeof ColorRoute
   '/contrast': typeof ContrastRoute
+  '/counter': typeof CounterRoute
   '/events': typeof EventsRoute
   '/jq': typeof JqRoute
   '/qr': typeof QrRoute
+  '/randomizer': typeof RandomizerRoute
   '/regex': typeof RegexRoute
   '/scratchpad': typeof ScratchpadRoute
+  '/sets': typeof SetsRoute
   '/timer': typeof TimerRoute
   '/timestamp': typeof TimestampRoute
 }
@@ -124,11 +151,14 @@ export interface FileRouteTypes {
     | '/about'
     | '/color'
     | '/contrast'
+    | '/counter'
     | '/events'
     | '/jq'
     | '/qr'
+    | '/randomizer'
     | '/regex'
     | '/scratchpad'
+    | '/sets'
     | '/timer'
     | '/timestamp'
   fileRoutesByTo: FileRoutesByTo
@@ -137,11 +167,14 @@ export interface FileRouteTypes {
     | '/about'
     | '/color'
     | '/contrast'
+    | '/counter'
     | '/events'
     | '/jq'
     | '/qr'
+    | '/randomizer'
     | '/regex'
     | '/scratchpad'
+    | '/sets'
     | '/timer'
     | '/timestamp'
   id:
@@ -150,11 +183,14 @@ export interface FileRouteTypes {
     | '/about'
     | '/color'
     | '/contrast'
+    | '/counter'
     | '/events'
     | '/jq'
     | '/qr'
+    | '/randomizer'
     | '/regex'
     | '/scratchpad'
+    | '/sets'
     | '/timer'
     | '/timestamp'
   fileRoutesById: FileRoutesById
@@ -164,11 +200,14 @@ export interface RootRouteChildren {
   AboutRoute: typeof AboutRoute
   ColorRoute: typeof ColorRoute
   ContrastRoute: typeof ContrastRoute
+  CounterRoute: typeof CounterRoute
   EventsRoute: typeof EventsRoute
   JqRoute: typeof JqRoute
   QrRoute: typeof QrRoute
+  RandomizerRoute: typeof RandomizerRoute
   RegexRoute: typeof RegexRoute
   ScratchpadRoute: typeof ScratchpadRoute
+  SetsRoute: typeof SetsRoute
   TimerRoute: typeof TimerRoute
   TimestampRoute: typeof TimestampRoute
 }
@@ -189,6 +228,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof TimerRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/sets': {
+      id: '/sets'
+      path: '/sets'
+      fullPath: '/sets'
+      preLoaderRoute: typeof SetsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/scratchpad': {
       id: '/scratchpad'
       path: '/scratchpad'
@@ -201,6 +247,13 @@ declare module '@tanstack/react-router' {
       path: '/regex'
       fullPath: '/regex'
       preLoaderRoute: typeof RegexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/randomizer': {
+      id: '/randomizer'
+      path: '/randomizer'
+      fullPath: '/randomizer'
+      preLoaderRoute: typeof RandomizerRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/qr': {
@@ -222,6 +275,13 @@ declare module '@tanstack/react-router' {
       path: '/events'
       fullPath: '/events'
       preLoaderRoute: typeof EventsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/counter': {
+      id: '/counter'
+      path: '/counter'
+      fullPath: '/counter'
+      preLoaderRoute: typeof CounterRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/contrast': {
@@ -260,11 +320,14 @@ const rootRouteChildren: RootRouteChildren = {
   AboutRoute: AboutRoute,
   ColorRoute: ColorRoute,
   ContrastRoute: ContrastRoute,
+  CounterRoute: CounterRoute,
   EventsRoute: EventsRoute,
   JqRoute: JqRoute,
   QrRoute: QrRoute,
+  RandomizerRoute: RandomizerRoute,
   RegexRoute: RegexRoute,
   ScratchpadRoute: ScratchpadRoute,
+  SetsRoute: SetsRoute,
   TimerRoute: TimerRoute,
   TimestampRoute: TimestampRoute,
 }

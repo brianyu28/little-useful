@@ -1,0 +1,85 @@
+.controls {
+  display: grid;
+  gap: 14px;
+}
+
+.numberGrid {
+  display: grid;
+  gap: 12px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.listGrid {
+  display: grid;
+  gap: 12px;
+}
+
+.textarea {
+  font-family:
+    ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
+    monospace;
+}
+
+.actions {
+  align-items: center;
+  display: flex;
+  gap: 8px;
+  justify-content: space-between;
+}
+
+.resultPanel {
+  border: 1px solid var(--app-border);
+  border-radius: 6px;
+  min-height: 156px;
+  padding: 16px;
+}
+
+.singleResult {
+  align-items: center;
+  display: flex;
+  font-size: clamp(2.75rem, 8vw, 5.5rem);
+  font-weight: 800;
+  justify-content: center;
+  letter-spacing: 0;
+  line-height: 1;
+  min-height: 124px;
+  overflow-wrap: anywhere;
+  text-align: center;
+}
+
+.resultList {
+  display: grid;
+  gap: 8px;
+  margin: 0;
+  padding: 0;
+}
+
+.resultItem {
+  background: color-mix(in srgb, var(--app-bg) 72%, var(--app-surface));
+  border: 1px solid var(--app-border);
+  border-radius: 6px;
+  list-style: none;
+  overflow-wrap: anywhere;
+  padding: 8px 10px;
+}
+
+.empty {
+  align-items: center;
+  color: var(--app-muted);
+  display: flex;
+  justify-content: center;
+  margin: 0;
+  min-height: 124px;
+  text-align: center;
+}
+
+@media (max-width: 640px) {
+  .numberGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .actions {
+    align-items: stretch;
+    flex-direction: column;
+  }
+}
