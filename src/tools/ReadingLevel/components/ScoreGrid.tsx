@@ -18,7 +18,7 @@ function formatRoundedScore(score: number | null) {
 
 function formatRawScore(score: number | null) {
   if (score == null || !Number.isFinite(score)) {
-    return null;
+    return "-";
   }
 
   return score.toFixed(3);
@@ -62,9 +62,7 @@ export function ScoreGrid({ metrics }: Props) {
               </Popover>
             </div>
             <div className={styles.scoreValue}>{formatRoundedScore(score)}</div>
-            {rawScore != null && (
-              <div className={styles.scoreRawValue}>{rawScore}</div>
-            )}
+            <div className={styles.scoreRawValue}>{rawScore}</div>
           </article>
         );
       })}

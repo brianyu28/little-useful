@@ -14,13 +14,13 @@ import { TimerConfig } from "./Timer/TimerConfig";
 import { TimestampConfig } from "./Timestamp/TimestampConfig";
 
 export const tools: ToolConfig[] = [
-  TimerConfig,
-  EventCountdownConfig,
-  ColorPickerConfig,
   QRCodeConfig,
-  ScratchpadConfig,
+  ColorPickerConfig,
   ReadingLevelConfig,
   TimestampConfig,
+  ScratchpadConfig,
+  EventCountdownConfig,
+  TimerConfig,
   ProcessJSONConfig,
   ContrastCheckConfig,
   RegexTestConfig,
