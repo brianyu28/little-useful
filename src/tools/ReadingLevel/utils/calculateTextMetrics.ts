@@ -2,8 +2,8 @@ import { syllable } from "syllable";
 import type { TextMetrics } from "../types/TextMetrics";
 import { countSentences } from "./countSentences";
 
-// Match words, including those with apostrophes or hyphens
-const wordPattern = /[\p{L}\p{N}]+(?:['-][\p{L}\p{N}]+)*/gu;
+// Match words, including those with apostrophes, smart apostrophes, or hyphens
+const wordPattern = /[\p{L}\p{N}]+(?:['‘’-][\p{L}\p{N}]+)*/gu;
 
 // Match a single letter or number (this is how ARI defines characters)
 const characterPattern = /[\p{L}\p{N}]/gu;
