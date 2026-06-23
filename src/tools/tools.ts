@@ -6,6 +6,7 @@ import { EventCountdownConfig } from "./EventCountdown/EventCountdownConfig";
 import { ProcessJSONConfig } from "./ProcessJson/ProcessJsonConfig";
 import { QRCodeConfig } from "./QRCode/QRCodeConfig";
 import { RandomizerConfig } from "./Randomizer/RandomizerConfig";
+import { ReadingLevelConfig } from "./ReadingLevel/ReadingLevelConfig";
 import { RegexTestConfig } from "./RegexTest/RegexTestConfig";
 import { ScratchpadConfig } from "./Scratchpad/ScratchpadConfig";
 import { SetComparisonConfig } from "./SetComparison/SetComparisonConfig";
@@ -18,6 +19,7 @@ export const tools: ToolConfig[] = [
   ColorPickerConfig,
   QRCodeConfig,
   ScratchpadConfig,
+  ReadingLevelConfig,
   TimestampConfig,
   ProcessJSONConfig,
   ContrastCheckConfig,

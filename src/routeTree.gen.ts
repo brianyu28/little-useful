@@ -14,6 +14,7 @@ import { Route as TimerRouteImport } from './routes/timer'
 import { Route as SetsRouteImport } from './routes/sets'
 import { Route as ScratchpadRouteImport } from './routes/scratchpad'
 import { Route as RegexRouteImport } from './routes/regex'
+import { Route as ReadabilityRouteImport } from './routes/readability'
 import { Route as RandomizerRouteImport } from './routes/randomizer'
 import { Route as QrRouteImport } from './routes/qr'
 import { Route as JqRouteImport } from './routes/jq'
@@ -47,6 +48,11 @@ const ScratchpadRoute = ScratchpadRouteImport.update({
 const RegexRoute = RegexRouteImport.update({
   id: '/regex',
   path: '/regex',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ReadabilityRoute = ReadabilityRouteImport.update({
+  id: '/readability',
+  path: '/readability',
   getParentRoute: () => rootRouteImport,
 } as any)
 const RandomizerRoute = RandomizerRouteImport.update({
@@ -105,6 +111,7 @@ export interface FileRoutesByFullPath {
   '/jq': typeof JqRoute
   '/qr': typeof QrRoute
   '/randomizer': typeof RandomizerRoute
+  '/readability': typeof ReadabilityRoute
   '/regex': typeof RegexRoute
   '/scratchpad': typeof ScratchpadRoute
   '/sets': typeof SetsRoute
@@ -121,6 +128,7 @@ export interface FileRoutesByTo {
   '/jq': typeof JqRoute
   '/qr': typeof QrRoute
   '/randomizer': typeof RandomizerRoute
+  '/readability': typeof ReadabilityRoute
   '/regex': typeof RegexRoute
   '/scratchpad': typeof ScratchpadRoute
   '/sets': typeof SetsRoute
@@ -138,6 +146,7 @@ export interface FileRoutesById {
   '/jq': typeof JqRoute
   '/qr': typeof QrRoute
   '/randomizer': typeof RandomizerRoute
+  '/readability': typeof ReadabilityRoute
   '/regex': typeof RegexRoute
   '/scratchpad': typeof ScratchpadRoute
   '/sets': typeof SetsRoute
@@ -156,6 +165,7 @@ export interface FileRouteTypes {
     | '/jq'
     | '/qr'
     | '/randomizer'
+    | '/readability'
     | '/regex'
     | '/scratchpad'
     | '/sets'
@@ -172,6 +182,7 @@ export interface FileRouteTypes {
     | '/jq'
     | '/qr'
     | '/randomizer'
+    | '/readability'
     | '/regex'
     | '/scratchpad'
     | '/sets'
@@ -188,6 +199,7 @@ export interface FileRouteTypes {
     | '/jq'
     | '/qr'
     | '/randomizer'
+    | '/readability'
     | '/regex'
     | '/scratchpad'
     | '/sets'
@@ -205,6 +217,7 @@ export interface RootRouteChildren {
   JqRoute: typeof JqRoute
   QrRoute: typeof QrRoute
   RandomizerRoute: typeof RandomizerRoute
+  ReadabilityRoute: typeof ReadabilityRoute
   RegexRoute: typeof RegexRoute
   ScratchpadRoute: typeof ScratchpadRoute
   SetsRoute: typeof SetsRoute
@@ -247,6 +260,13 @@ declare module '@tanstack/react-router' {
       path: '/regex'
       fullPath: '/regex'
       preLoaderRoute: typeof RegexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/readability': {
+      id: '/readability'
+      path: '/readability'
+      fullPath: '/readability'
+      preLoaderRoute: typeof ReadabilityRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/randomizer': {
@@ -325,6 +345,7 @@ const rootRouteChildren: RootRouteChildren = {
   JqRoute: JqRoute,
   QrRoute: QrRoute,
   RandomizerRoute: RandomizerRoute,
+  ReadabilityRoute: ReadabilityRoute,
   RegexRoute: RegexRoute,
   ScratchpadRoute: ScratchpadRoute,
   SetsRoute: SetsRoute,

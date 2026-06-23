@@ -1,7 +1,7 @@
-import { Textarea } from "@mantine/core";
 import throttle from "lodash-es/throttle";
 import React from "react";
 import { z } from "zod";
+import { ResizableTextarea } from "../../components/ResizableTextarea";
 import ToolPage from "../../components/ToolPage";
 import { useToolState } from "../../hooks/useToolState";
 import { ScratchpadSettings } from "./components/ScratchpadSettings";
@@ -62,10 +62,10 @@ export default function Scratchpad() {
       }
       title={ScratchpadConfig.title}
     >
-      <Textarea
+      <ResizableTextarea
         aria-label="Scratchpad"
         autoFocus
-        classNames={{ input: styles.input }}
+        inputClassName={styles.input}
         onChange={handleTextChange}
         value={scratchpad.text}
       />

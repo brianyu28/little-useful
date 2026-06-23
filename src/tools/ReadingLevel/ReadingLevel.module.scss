@@ -1,0 +1,150 @@
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.scoreGrid {
+  display: grid;
+  gap: 12px;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.scoreCard {
+  background: color-mix(in srgb, var(--app-surface) 92%, var(--app-accent));
+  border: 1px solid var(--app-border);
+  border-radius: 6px;
+  min-width: 0;
+  padding: 14px;
+}
+
+.scoreHeader {
+  align-items: flex-start;
+  display: flex;
+  gap: 8px;
+  justify-content: space-between;
+  min-height: 42px;
+}
+
+.scoreLabel {
+  color: var(--app-muted);
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 1.25;
+  min-width: 0;
+}
+
+.infoButton {
+  flex: 0 0 auto;
+}
+
+.scoreValue {
+  color: var(--app-text);
+  font-size: 36px;
+  font-weight: 800;
+  line-height: 1;
+  margin-top: 12px;
+  overflow-wrap: anywhere;
+}
+
+.scoreRawValue {
+  color: var(--app-muted);
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1.2;
+  margin-top: 6px;
+}
+
+.metricGrid {
+  border: 1px solid var(--app-border);
+  border-radius: 6px;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  overflow: hidden;
+}
+
+.metricItem {
+  border-left: 1px solid var(--app-border);
+  border-top: 1px solid var(--app-border);
+  min-width: 0;
+  padding: 12px;
+}
+
+.metricItem:nth-child(4n + 1) {
+  border-left: 0;
+}
+
+.metricItem:nth-child(-n + 4) {
+  border-top: 0;
+}
+
+.metricLabel {
+  color: var(--app-muted);
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.metricHeader {
+  align-items: center;
+  display: flex;
+  gap: 4px;
+  min-height: 18px;
+}
+
+.metricInfoButton {
+  flex: 0 0 auto;
+}
+
+.metricValue {
+  font-size: 22px;
+  font-weight: 800;
+  line-height: 1;
+  margin-top: 8px;
+  overflow-wrap: anywhere;
+}
+
+.textarea {
+  line-height: 1.55;
+  min-height: min(48vh, 480px);
+}
+
+@media (max-width: 760px) {
+  .scoreGrid,
+  .metricGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .metricItem:nth-child(n) {
+    border-left: 1px solid var(--app-border);
+    border-top: 1px solid var(--app-border);
+  }
+
+  .metricItem:nth-child(2n + 1) {
+    border-left: 0;
+  }
+
+  .metricItem:nth-child(-n + 2) {
+    border-top: 0;
+  }
+
+  .scoreValue {
+    font-size: 30px;
+  }
+}
+
+@media (max-width: 440px) {
+  .scoreGrid,
+  .metricGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .metricItem:nth-child(n) {
+    border-left: 0;
+    border-top: 1px solid var(--app-border);
+  }
+
+  .metricItem:first-child {
+    border-top: 0;
+  }
+}
