@@ -6,6 +6,9 @@ import RootDocument from "../components/RootDocument";
 import appCss from "../styles.scss?url";
 
 export const Route = createRootRoute({
+  headers: () => ({
+    "Cache-Control": "no-cache",
+  }),
   head: () => ({
     meta: [
       {

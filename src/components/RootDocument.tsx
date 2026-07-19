@@ -28,6 +28,7 @@ export default function RootDocument({ children }: Props) {
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
+        <script src="/asset-load-recovery.js" />
         <HeadContent />
         <script
           async
