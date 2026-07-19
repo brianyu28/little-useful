@@ -1,0 +1,18 @@
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.input {
+  font-size: clamp(24px, 5vw, 42px);
+  font-weight: 700;
+  line-height: 1.28;
+  min-height: 100px;
+  padding: 28px;
+  text-align: center;
+}
+
+.styleNote {
+  text-align: center;
+}

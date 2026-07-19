@@ -1,0 +1,48 @@
+.inputGrid {
+  display: grid;
+  gap: 14px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.heightInputs {
+  display: grid;
+  gap: 10px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.result {
+  background: color-mix(in srgb, var(--app-surface) 90%, var(--app-accent));
+  border: 1px solid var(--app-border);
+  border-radius: 8px;
+  padding: 20px;
+  text-align: center;
+}
+
+.bmiValue {
+  font-size: 48px;
+  font-weight: 800;
+  line-height: 1;
+  margin-top: 6px;
+}
+
+.category {
+  color: var(--app-accent);
+  font-size: 18px;
+  font-weight: 800;
+  margin-top: 8px;
+}
+
+.table {
+  font-size: 14px;
+}
+
+.activeRow {
+  background: color-mix(in srgb, var(--app-surface) 84%, var(--app-accent));
+  font-weight: 700;
+}
+
+@media (max-width: 480px) {
+  .inputGrid {
+    grid-template-columns: 1fr;
+  }
+}

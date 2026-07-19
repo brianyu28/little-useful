@@ -17,11 +17,14 @@ import { Route as RegexRouteImport } from './routes/regex'
 import { Route as ReadabilityRouteImport } from './routes/readability'
 import { Route as RandomizerRouteImport } from './routes/randomizer'
 import { Route as QrRouteImport } from './routes/qr'
+import { Route as MoonRouteImport } from './routes/moon'
 import { Route as JqRouteImport } from './routes/jq'
 import { Route as EventsRouteImport } from './routes/events'
 import { Route as CounterRouteImport } from './routes/counter'
 import { Route as ContrastRouteImport } from './routes/contrast'
 import { Route as ColorRouteImport } from './routes/color'
+import { Route as CapitalizeRouteImport } from './routes/capitalize'
+import { Route as BmiRouteImport } from './routes/bmi'
 import { Route as AboutRouteImport } from './routes/about'
 import { Route as IndexRouteImport } from './routes/index'
 
@@ -65,6 +68,11 @@ const QrRoute = QrRouteImport.update({
   path: '/qr',
   getParentRoute: () => rootRouteImport,
 } as any)
+const MoonRoute = MoonRouteImport.update({
+  id: '/moon',
+  path: '/moon',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const JqRoute = JqRouteImport.update({
   id: '/jq',
   path: '/jq',
@@ -90,6 +98,16 @@ const ColorRoute = ColorRouteImport.update({
   path: '/color',
   getParentRoute: () => rootRouteImport,
 } as any)
+const CapitalizeRoute = CapitalizeRouteImport.update({
+  id: '/capitalize',
+  path: '/capitalize',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const BmiRoute = BmiRouteImport.update({
+  id: '/bmi',
+  path: '/bmi',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const AboutRoute = AboutRouteImport.update({
   id: '/about',
   path: '/about',
@@ -104,11 +122,14 @@ const IndexRoute = IndexRouteImport.update({
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/bmi': typeof BmiRoute
+  '/capitalize': typeof CapitalizeRoute
   '/color': typeof ColorRoute
   '/contrast': typeof ContrastRoute
   '/counter': typeof CounterRoute
   '/events': typeof EventsRoute
   '/jq': typeof JqRoute
+  '/moon': typeof MoonRoute
   '/qr': typeof QrRoute
   '/randomizer': typeof RandomizerRoute
   '/readability': typeof ReadabilityRoute
@@ -121,11 +142,14 @@ export interface FileRoutesByFullPath {
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/bmi': typeof BmiRoute
+  '/capitalize': typeof CapitalizeRoute
   '/color': typeof ColorRoute
   '/contrast': typeof ContrastRoute
   '/counter': typeof CounterRoute
   '/events': typeof EventsRoute
   '/jq': typeof JqRoute
+  '/moon': typeof MoonRoute
   '/qr': typeof QrRoute
   '/randomizer': typeof RandomizerRoute
   '/readability': typeof ReadabilityRoute
@@ -139,11 +163,14 @@ export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/bmi': typeof BmiRoute
+  '/capitalize': typeof CapitalizeRoute
   '/color': typeof ColorRoute
   '/contrast': typeof ContrastRoute
   '/counter': typeof CounterRoute
   '/events': typeof EventsRoute
   '/jq': typeof JqRoute
+  '/moon': typeof MoonRoute
   '/qr': typeof QrRoute
   '/randomizer': typeof RandomizerRoute
   '/readability': typeof ReadabilityRoute
@@ -158,11 +185,14 @@ export interface FileRouteTypes {
   fullPaths:
     | '/'
     | '/about'
+    | '/bmi'
+    | '/capitalize'
     | '/color'
     | '/contrast'
     | '/counter'
     | '/events'
     | '/jq'
+    | '/moon'
     | '/qr'
     | '/randomizer'
     | '/readability'
@@ -175,11 +205,14 @@ export interface FileRouteTypes {
   to:
     | '/'
     | '/about'
+    | '/bmi'
+    | '/capitalize'
     | '/color'
     | '/contrast'
     | '/counter'
     | '/events'
     | '/jq'
+    | '/moon'
     | '/qr'
     | '/randomizer'
     | '/readability'
@@ -192,11 +225,14 @@ export interface FileRouteTypes {
     | '__root__'
     | '/'
     | '/about'
+    | '/bmi'
+    | '/capitalize'
     | '/color'
     | '/contrast'
     | '/counter'
     | '/events'
     | '/jq'
+    | '/moon'
     | '/qr'
     | '/randomizer'
     | '/readability'
@@ -210,11 +246,14 @@ export interface FileRouteTypes {
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AboutRoute: typeof AboutRoute
+  BmiRoute: typeof BmiRoute
+  CapitalizeRoute: typeof CapitalizeRoute
   ColorRoute: typeof ColorRoute
   ContrastRoute: typeof ContrastRoute
   CounterRoute: typeof CounterRoute
   EventsRoute: typeof EventsRoute
   JqRoute: typeof JqRoute
+  MoonRoute: typeof MoonRoute
   QrRoute: typeof QrRoute
   RandomizerRoute: typeof RandomizerRoute
   ReadabilityRoute: typeof ReadabilityRoute
@@ -283,6 +322,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof QrRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/moon': {
+      id: '/moon'
+      path: '/moon'
+      fullPath: '/moon'
+      preLoaderRoute: typeof MoonRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/jq': {
       id: '/jq'
       path: '/jq'
@@ -318,6 +364,20 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ColorRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/capitalize': {
+      id: '/capitalize'
+      path: '/capitalize'
+      fullPath: '/capitalize'
+      preLoaderRoute: typeof CapitalizeRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/bmi': {
+      id: '/bmi'
+      path: '/bmi'
+      fullPath: '/bmi'
+      preLoaderRoute: typeof BmiRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/about': {
       id: '/about'
       path: '/about'
@@ -338,11 +398,14 @@ declare module '@tanstack/react-router' {
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AboutRoute: AboutRoute,
+  BmiRoute: BmiRoute,
+  CapitalizeRoute: CapitalizeRoute,
   ColorRoute: ColorRoute,
   ContrastRoute: ContrastRoute,
   CounterRoute: CounterRoute,
   EventsRoute: EventsRoute,
   JqRoute: JqRoute,
+  MoonRoute: MoonRoute,
   QrRoute: QrRoute,
   RandomizerRoute: RandomizerRoute,
   ReadabilityRoute: ReadabilityRoute,

@@ -1,0 +1,121 @@
+.content {
+  overflow: hidden;
+}
+
+.datePicker {
+  margin: 0 auto;
+  max-width: 480px;
+  width: 100%;
+}
+
+.dateSkeleton {
+  margin: 0 auto;
+  max-width: 480px;
+}
+
+.dateControls {
+  align-items: stretch;
+}
+
+.dateInput {
+  flex: 1;
+
+  input {
+    background: var(--app-surface);
+    border-color: var(--app-border);
+    color: var(--app-text);
+    font-size: 1.25rem;
+    font-weight: 700;
+    text-align: center;
+  }
+}
+
+.dateButton {
+  background: var(--app-surface);
+  border-color: var(--app-border);
+  color: var(--app-text);
+  aspect-ratio: 1;
+  flex: 0 0 auto;
+  height: auto;
+  min-width: 0;
+  width: auto;
+
+  &:hover {
+    background: color-mix(in srgb, var(--app-surface) 92%, var(--app-text));
+  }
+}
+
+.result {
+  align-items: center;
+  background:
+    radial-gradient(
+      circle at 50% 5%,
+      rgba(255, 242, 202, 0.16),
+      transparent 35%
+    ),
+    #243451;
+  border-radius: 12px;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  padding: 28px 20px;
+  text-align: center;
+}
+
+.heroMoon {
+  filter: drop-shadow(0 8px 16px rgba(0, 0, 0, 0.28));
+  margin-bottom: 16px;
+}
+
+.phaseLabel {
+  font-size: clamp(2rem, 6vw, 3rem);
+  font-weight: 800;
+  line-height: 1.1;
+  margin: 4px 0 8px;
+}
+
+.tableScroll {
+  overflow-x: auto;
+}
+
+.table {
+  font-size: 13px;
+  min-width: 700px;
+  table-layout: fixed;
+  width: 100%;
+
+  col {
+    width: calc(100% / 7);
+  }
+
+  td {
+    text-align: center;
+    vertical-align: middle;
+  }
+}
+
+.dayPhase {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  min-width: 74px;
+
+  time {
+    color: var(--mantine-color-dimmed);
+    font-size: 11px;
+    font-weight: 600;
+    white-space: nowrap;
+
+    strong {
+      color: var(--mantine-color-text);
+      display: block;
+      font-size: 13px;
+      margin-top: 2px;
+    }
+  }
+
+  span {
+    line-height: 1.15;
+  }
+}

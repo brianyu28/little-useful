@@ -1,8 +1,10 @@
 import type { ToolConfig } from "../types/ToolConfig";
+import { BmiCalculatorConfig } from "./BmiCalculator/BmiCalculatorConfig";
 import { ColorPickerConfig } from "./ColorPicker/ColorPickerConfig";
 import { ContrastCheckConfig } from "./ContrastCheck/ContrastCheckConfig";
 import { CounterConfig } from "./Counter/CounterConfig";
 import { EventCountdownConfig } from "./EventCountdown/EventCountdownConfig";
+import { MoonPhaseCalculatorConfig } from "./MoonPhaseCalculator/MoonPhaseCalculatorConfig";
 import { ProcessJSONConfig } from "./ProcessJson/ProcessJsonConfig";
 import { QRCodeConfig } from "./QRCode/QRCodeConfig";
 import { RandomizerConfig } from "./Randomizer/RandomizerConfig";
@@ -12,6 +14,7 @@ import { ScratchpadConfig } from "./Scratchpad/ScratchpadConfig";
 import { SetComparisonConfig } from "./SetComparison/SetComparisonConfig";
 import { TimerConfig } from "./Timer/TimerConfig";
 import { TimestampConfig } from "./Timestamp/TimestampConfig";
+import { TitleCapitalizerConfig } from "./TitleCapitalizer/TitleCapitalizerConfig";
 
 export const tools: ToolConfig[] = [
   QRCodeConfig,
@@ -19,6 +22,7 @@ export const tools: ToolConfig[] = [
   ReadingLevelConfig,
   TimestampConfig,
   ScratchpadConfig,
+  TitleCapitalizerConfig,
   EventCountdownConfig,
   TimerConfig,
   ProcessJSONConfig,
@@ -27,4 +31,6 @@ export const tools: ToolConfig[] = [
   SetComparisonConfig,
   CounterConfig,
   RandomizerConfig,
+  BmiCalculatorConfig,
+  MoonPhaseCalculatorConfig,
 ];
