@@ -9,103 +9,29 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
-import { Route as TimestampRouteImport } from './routes/timestamp'
-import { Route as TimerRouteImport } from './routes/timer'
-import { Route as SetsRouteImport } from './routes/sets'
-import { Route as ScratchpadRouteImport } from './routes/scratchpad'
-import { Route as RegexRouteImport } from './routes/regex'
-import { Route as ReadabilityRouteImport } from './routes/readability'
-import { Route as RandomizerRouteImport } from './routes/randomizer'
-import { Route as QrRouteImport } from './routes/qr'
-import { Route as MoonRouteImport } from './routes/moon'
-import { Route as JqRouteImport } from './routes/jq'
-import { Route as EventsRouteImport } from './routes/events'
-import { Route as CounterRouteImport } from './routes/counter'
-import { Route as ContrastRouteImport } from './routes/contrast'
-import { Route as ColorRouteImport } from './routes/color'
-import { Route as CapitalizeRouteImport } from './routes/capitalize'
-import { Route as BmiRouteImport } from './routes/bmi'
-import { Route as AboutRouteImport } from './routes/about'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as AboutRouteImport } from './routes/about'
+import { Route as BmiRouteImport } from './routes/bmi'
+import { Route as CapitalizeRouteImport } from './routes/capitalize'
+import { Route as ColorRouteImport } from './routes/color'
+import { Route as ContrastRouteImport } from './routes/contrast'
+import { Route as CounterRouteImport } from './routes/counter'
+import { Route as EventsRouteImport } from './routes/events'
+import { Route as JqRouteImport } from './routes/jq'
+import { Route as MarkdownRouteImport } from './routes/markdown'
+import { Route as MoonRouteImport } from './routes/moon'
+import { Route as QrRouteImport } from './routes/qr'
+import { Route as RandomizerRouteImport } from './routes/randomizer'
+import { Route as ReadabilityRouteImport } from './routes/readability'
+import { Route as RegexRouteImport } from './routes/regex'
+import { Route as ScratchpadRouteImport } from './routes/scratchpad'
+import { Route as SetsRouteImport } from './routes/sets'
+import { Route as TimerRouteImport } from './routes/timer'
+import { Route as TimestampRouteImport } from './routes/timestamp'
 
-const TimestampRoute = TimestampRouteImport.update({
-  id: '/timestamp',
-  path: '/timestamp',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const TimerRoute = TimerRouteImport.update({
-  id: '/timer',
-  path: '/timer',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const SetsRoute = SetsRouteImport.update({
-  id: '/sets',
-  path: '/sets',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const ScratchpadRoute = ScratchpadRouteImport.update({
-  id: '/scratchpad',
-  path: '/scratchpad',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const RegexRoute = RegexRouteImport.update({
-  id: '/regex',
-  path: '/regex',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const ReadabilityRoute = ReadabilityRouteImport.update({
-  id: '/readability',
-  path: '/readability',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const RandomizerRoute = RandomizerRouteImport.update({
-  id: '/randomizer',
-  path: '/randomizer',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const QrRoute = QrRouteImport.update({
-  id: '/qr',
-  path: '/qr',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const MoonRoute = MoonRouteImport.update({
-  id: '/moon',
-  path: '/moon',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const JqRoute = JqRouteImport.update({
-  id: '/jq',
-  path: '/jq',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const EventsRoute = EventsRouteImport.update({
-  id: '/events',
-  path: '/events',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const CounterRoute = CounterRouteImport.update({
-  id: '/counter',
-  path: '/counter',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const ContrastRoute = ContrastRouteImport.update({
-  id: '/contrast',
-  path: '/contrast',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const ColorRoute = ColorRouteImport.update({
-  id: '/color',
-  path: '/color',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const CapitalizeRoute = CapitalizeRouteImport.update({
-  id: '/capitalize',
-  path: '/capitalize',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const BmiRoute = BmiRouteImport.update({
-  id: '/bmi',
-  path: '/bmi',
+const IndexRoute = IndexRouteImport.update({
+  id: '/',
+  path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
 const AboutRoute = AboutRouteImport.update({
@@ -113,9 +39,89 @@ const AboutRoute = AboutRouteImport.update({
   path: '/about',
   getParentRoute: () => rootRouteImport,
 } as any)
-const IndexRoute = IndexRouteImport.update({
-  id: '/',
-  path: '/',
+const BmiRoute = BmiRouteImport.update({
+  id: '/bmi',
+  path: '/bmi',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CapitalizeRoute = CapitalizeRouteImport.update({
+  id: '/capitalize',
+  path: '/capitalize',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ColorRoute = ColorRouteImport.update({
+  id: '/color',
+  path: '/color',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ContrastRoute = ContrastRouteImport.update({
+  id: '/contrast',
+  path: '/contrast',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CounterRoute = CounterRouteImport.update({
+  id: '/counter',
+  path: '/counter',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const EventsRoute = EventsRouteImport.update({
+  id: '/events',
+  path: '/events',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const JqRoute = JqRouteImport.update({
+  id: '/jq',
+  path: '/jq',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const MarkdownRoute = MarkdownRouteImport.update({
+  id: '/markdown',
+  path: '/markdown',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const MoonRoute = MoonRouteImport.update({
+  id: '/moon',
+  path: '/moon',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const QrRoute = QrRouteImport.update({
+  id: '/qr',
+  path: '/qr',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const RandomizerRoute = RandomizerRouteImport.update({
+  id: '/randomizer',
+  path: '/randomizer',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ReadabilityRoute = ReadabilityRouteImport.update({
+  id: '/readability',
+  path: '/readability',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const RegexRoute = RegexRouteImport.update({
+  id: '/regex',
+  path: '/regex',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ScratchpadRoute = ScratchpadRouteImport.update({
+  id: '/scratchpad',
+  path: '/scratchpad',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SetsRoute = SetsRouteImport.update({
+  id: '/sets',
+  path: '/sets',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const TimerRoute = TimerRouteImport.update({
+  id: '/timer',
+  path: '/timer',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const TimestampRoute = TimestampRouteImport.update({
+  id: '/timestamp',
+  path: '/timestamp',
   getParentRoute: () => rootRouteImport,
 } as any)
 
@@ -129,6 +135,7 @@ export interface FileRoutesByFullPath {
   '/counter': typeof CounterRoute
   '/events': typeof EventsRoute
   '/jq': typeof JqRoute
+  '/markdown': typeof MarkdownRoute
   '/moon': typeof MoonRoute
   '/qr': typeof QrRoute
   '/randomizer': typeof RandomizerRoute
@@ -149,6 +156,7 @@ export interface FileRoutesByTo {
   '/counter': typeof CounterRoute
   '/events': typeof EventsRoute
   '/jq': typeof JqRoute
+  '/markdown': typeof MarkdownRoute
   '/moon': typeof MoonRoute
   '/qr': typeof QrRoute
   '/randomizer': typeof RandomizerRoute
@@ -170,6 +178,7 @@ export interface FileRoutesById {
   '/counter': typeof CounterRoute
   '/events': typeof EventsRoute
   '/jq': typeof JqRoute
+  '/markdown': typeof MarkdownRoute
   '/moon': typeof MoonRoute
   '/qr': typeof QrRoute
   '/randomizer': typeof RandomizerRoute
@@ -192,6 +201,7 @@ export interface FileRouteTypes {
     | '/counter'
     | '/events'
     | '/jq'
+    | '/markdown'
     | '/moon'
     | '/qr'
     | '/randomizer'
@@ -212,6 +222,7 @@ export interface FileRouteTypes {
     | '/counter'
     | '/events'
     | '/jq'
+    | '/markdown'
     | '/moon'
     | '/qr'
     | '/randomizer'
@@ -232,6 +243,7 @@ export interface FileRouteTypes {
     | '/counter'
     | '/events'
     | '/jq'
+    | '/markdown'
     | '/moon'
     | '/qr'
     | '/randomizer'
@@ -253,6 +265,7 @@ export interface RootRouteChildren {
   CounterRoute: typeof CounterRoute
   EventsRoute: typeof EventsRoute
   JqRoute: typeof JqRoute
+  MarkdownRoute: typeof MarkdownRoute
   MoonRoute: typeof MoonRoute
   QrRoute: typeof QrRoute
   RandomizerRoute: typeof RandomizerRoute
@@ -266,116 +279,11 @@ export interface RootRouteChildren {
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
-    '/timestamp': {
-      id: '/timestamp'
-      path: '/timestamp'
-      fullPath: '/timestamp'
-      preLoaderRoute: typeof TimestampRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/timer': {
-      id: '/timer'
-      path: '/timer'
-      fullPath: '/timer'
-      preLoaderRoute: typeof TimerRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/sets': {
-      id: '/sets'
-      path: '/sets'
-      fullPath: '/sets'
-      preLoaderRoute: typeof SetsRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/scratchpad': {
-      id: '/scratchpad'
-      path: '/scratchpad'
-      fullPath: '/scratchpad'
-      preLoaderRoute: typeof ScratchpadRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/regex': {
-      id: '/regex'
-      path: '/regex'
-      fullPath: '/regex'
-      preLoaderRoute: typeof RegexRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/readability': {
-      id: '/readability'
-      path: '/readability'
-      fullPath: '/readability'
-      preLoaderRoute: typeof ReadabilityRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/randomizer': {
-      id: '/randomizer'
-      path: '/randomizer'
-      fullPath: '/randomizer'
-      preLoaderRoute: typeof RandomizerRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/qr': {
-      id: '/qr'
-      path: '/qr'
-      fullPath: '/qr'
-      preLoaderRoute: typeof QrRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/moon': {
-      id: '/moon'
-      path: '/moon'
-      fullPath: '/moon'
-      preLoaderRoute: typeof MoonRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/jq': {
-      id: '/jq'
-      path: '/jq'
-      fullPath: '/jq'
-      preLoaderRoute: typeof JqRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/events': {
-      id: '/events'
-      path: '/events'
-      fullPath: '/events'
-      preLoaderRoute: typeof EventsRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/counter': {
-      id: '/counter'
-      path: '/counter'
-      fullPath: '/counter'
-      preLoaderRoute: typeof CounterRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/contrast': {
-      id: '/contrast'
-      path: '/contrast'
-      fullPath: '/contrast'
-      preLoaderRoute: typeof ContrastRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/color': {
-      id: '/color'
-      path: '/color'
-      fullPath: '/color'
-      preLoaderRoute: typeof ColorRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/capitalize': {
-      id: '/capitalize'
-      path: '/capitalize'
-      fullPath: '/capitalize'
-      preLoaderRoute: typeof CapitalizeRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/bmi': {
-      id: '/bmi'
-      path: '/bmi'
-      fullPath: '/bmi'
-      preLoaderRoute: typeof BmiRouteImport
+    '/': {
+      id: '/'
+      path: '/'
+      fullPath: '/'
+      preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/about': {
@@ -385,11 +293,123 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AboutRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/': {
-      id: '/'
-      path: '/'
-      fullPath: '/'
-      preLoaderRoute: typeof IndexRouteImport
+    '/bmi': {
+      id: '/bmi'
+      path: '/bmi'
+      fullPath: '/bmi'
+      preLoaderRoute: typeof BmiRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/capitalize': {
+      id: '/capitalize'
+      path: '/capitalize'
+      fullPath: '/capitalize'
+      preLoaderRoute: typeof CapitalizeRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/color': {
+      id: '/color'
+      path: '/color'
+      fullPath: '/color'
+      preLoaderRoute: typeof ColorRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/contrast': {
+      id: '/contrast'
+      path: '/contrast'
+      fullPath: '/contrast'
+      preLoaderRoute: typeof ContrastRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/counter': {
+      id: '/counter'
+      path: '/counter'
+      fullPath: '/counter'
+      preLoaderRoute: typeof CounterRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/events': {
+      id: '/events'
+      path: '/events'
+      fullPath: '/events'
+      preLoaderRoute: typeof EventsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/jq': {
+      id: '/jq'
+      path: '/jq'
+      fullPath: '/jq'
+      preLoaderRoute: typeof JqRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/markdown': {
+      id: '/markdown'
+      path: '/markdown'
+      fullPath: '/markdown'
+      preLoaderRoute: typeof MarkdownRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/moon': {
+      id: '/moon'
+      path: '/moon'
+      fullPath: '/moon'
+      preLoaderRoute: typeof MoonRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/qr': {
+      id: '/qr'
+      path: '/qr'
+      fullPath: '/qr'
+      preLoaderRoute: typeof QrRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/randomizer': {
+      id: '/randomizer'
+      path: '/randomizer'
+      fullPath: '/randomizer'
+      preLoaderRoute: typeof RandomizerRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/readability': {
+      id: '/readability'
+      path: '/readability'
+      fullPath: '/readability'
+      preLoaderRoute: typeof ReadabilityRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/regex': {
+      id: '/regex'
+      path: '/regex'
+      fullPath: '/regex'
+      preLoaderRoute: typeof RegexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/scratchpad': {
+      id: '/scratchpad'
+      path: '/scratchpad'
+      fullPath: '/scratchpad'
+      preLoaderRoute: typeof ScratchpadRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/sets': {
+      id: '/sets'
+      path: '/sets'
+      fullPath: '/sets'
+      preLoaderRoute: typeof SetsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/timer': {
+      id: '/timer'
+      path: '/timer'
+      fullPath: '/timer'
+      preLoaderRoute: typeof TimerRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/timestamp': {
+      id: '/timestamp'
+      path: '/timestamp'
+      fullPath: '/timestamp'
+      preLoaderRoute: typeof TimestampRouteImport
       parentRoute: typeof rootRouteImport
     }
   }
@@ -405,6 +425,7 @@ const rootRouteChildren: RootRouteChildren = {
   CounterRoute: CounterRoute,
   EventsRoute: EventsRoute,
   JqRoute: JqRoute,
+  MarkdownRoute: MarkdownRoute,
   MoonRoute: MoonRoute,
   QrRoute: QrRoute,
   RandomizerRoute: RandomizerRoute,

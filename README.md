@@ -11,6 +11,7 @@ A free, open-source collection of little, useful tools.
 - **Contrast Check**: Check colors against WCAG contrast criteria
 - **Counter**: Count repeated lines of text by frequency
 - **Event Countdown**: Track time until upcoming events
+- **Markdown Preview**: Preview Markdown formatting.
 - **Moon Phase**: See the moon phase for any date
 - **Process JSON**: Run `jq` expressions on JSON data
 - **QR Code**: Generate QR codes for URLs, Wi-Fi, events, and more

@@ -4,6 +4,7 @@ import { ColorPickerConfig } from "./ColorPicker/ColorPickerConfig";
 import { ContrastCheckConfig } from "./ContrastCheck/ContrastCheckConfig";
 import { CounterConfig } from "./Counter/CounterConfig";
 import { EventCountdownConfig } from "./EventCountdown/EventCountdownConfig";
+import { MarkdownPreviewConfig } from "./MarkdownPreview/MarkdownPreviewConfig";
 import { MoonPhaseCalculatorConfig } from "./MoonPhaseCalculator/MoonPhaseCalculatorConfig";
 import { ProcessJSONConfig } from "./ProcessJson/ProcessJsonConfig";
 import { QRCodeConfig } from "./QRCode/QRCodeConfig";
@@ -22,6 +23,7 @@ export const tools: ToolConfig[] = [
   ReadingLevelConfig,
   TimestampConfig,
   ScratchpadConfig,
+  MarkdownPreviewConfig,
   TitleCapitalizerConfig,
   EventCountdownConfig,
   TimerConfig,
